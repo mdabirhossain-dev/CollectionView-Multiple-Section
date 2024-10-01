@@ -94,6 +94,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Selected item:: \(sections[indexPath.section].items[indexPath.row].title)")
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
