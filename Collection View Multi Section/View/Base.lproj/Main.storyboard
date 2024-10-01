@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ltx-oE-LWz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Db-qo-EPO">
                                     <size key="itemSize" width="85" height="83"/>
@@ -107,7 +107,7 @@
                                                         <constraint firstAttribute="width" constant="60" id="edp-oy-Xj8"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wme-sR-uTX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wme-sR-uTX">
                                                     <rect key="frame" x="70" y="21.666666666666668" width="64" height="18.000000000000004"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,10 +162,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ltx-oE-LWz" secondAttribute="bottom" id="HR6-O7-nXc"/>
-                            <constraint firstItem="ltx-oE-LWz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QyA-R1-dtB"/>
-                            <constraint firstAttribute="trailing" secondItem="ltx-oE-LWz" secondAttribute="trailing" id="ekU-Nd-uGd"/>
-                            <constraint firstItem="ltx-oE-LWz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qNC-8n-ZwA"/>
+                            <constraint firstItem="ltx-oE-LWz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7YN-bA-BiQ"/>
+                            <constraint firstItem="ltx-oE-LWz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fOo-QI-rqL"/>
+                            <constraint firstItem="ltx-oE-LWz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jNh-eg-DlG"/>
+                            <constraint firstAttribute="bottom" secondItem="ltx-oE-LWz" secondAttribute="bottom" id="qBG-MP-yhB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="5"/>
+            <point key="canvasLocation" x="137.68115942028987" y="4.6875"/>
         </scene>
     </scenes>
     <resources>

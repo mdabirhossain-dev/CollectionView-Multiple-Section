@@ -19,6 +19,77 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.collectionViewLayout = createLayout()
+        
+    }
+    
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnviornment in
+//            guard let self = self else { return nil }
+            let section = self?.sections[sectionIndex]
+            
+            switch section {
+                case .stories:
+                    // Item
+                    let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                    
+                    // Group
+                    let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(70), heightDimension: .absolute(70)), subitems: [item])
+                    
+                    // Section
+                    let section = NSCollectionLayoutSection(group: group)
+                    section.orthogonalScrollingBehavior = .continuous
+                    section.interGroupSpacing = 10
+                    section.contentInsets = .init(top: 0, leading: 10, bottom: 20, trailing: 10)
+                    section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)]
+                    section.supplementariesFollowContentInsets = false
+                    
+                    return section
+                    
+                case .popular:
+                    // Item
+                    let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                    
+                    // Group
+                    let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(0.6)), subitems: [item])
+                    
+                    // Section
+                    let section = NSCollectionLayoutSection(group: group)
+                    section.orthogonalScrollingBehavior = .groupPagingCentered
+                    section.interGroupSpacing = 10
+                    section.contentInsets = .init(top: 0, leading: 10, bottom: 20, trailing: 10)
+                    section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)]
+                    section.supplementariesFollowContentInsets = false
+                    
+                    return section
+                    
+                case .comingSoon:
+                    // Item
+                    let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                    
+                    // Group
+                    let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(180), heightDimension: .absolute(85)), subitems: [item])
+                    
+                    // Section
+                    let section = NSCollectionLayoutSection(group: group)
+                    section.orthogonalScrollingBehavior = .continuous
+                    section.interGroupSpacing = 10
+                    section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
+                    section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)]
+                    section.supplementariesFollowContentInsets = false
+                    
+                    return section
+                    
+                case .none:
+                    return nil
+            }
+        }
+    }
+    
+    private func supplimentaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
     }
 }
 
