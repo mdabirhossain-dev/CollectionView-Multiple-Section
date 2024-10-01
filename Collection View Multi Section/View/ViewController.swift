@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                     let section = NSCollectionLayoutSection(group: group)
                     section.orthogonalScrollingBehavior = .groupPagingCentered
                     section.interGroupSpacing = 10
-                    section.contentInsets = .init(top: 0, leading: 10, bottom: 20, trailing: 10)
+                    section.contentInsets = .init(top: 0, leading: -10, bottom: 20, trailing: 10)
                     section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)]
                     section.supplementariesFollowContentInsets = false
                     
